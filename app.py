@@ -1,13 +1,11 @@
 import streamlit as st
-import onnx
-import onnx_tf.backend as backend
+import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
 
-# Load your ONNX model
-onnx_model = onnx.load('model.onnx')
-tf_rep = backend.prepare(onnx_model)
+# Load your H5 model file
+model = tf.keras.models.load_model('model.h5')
 
 # Create a Streamlit sidebar for file upload
 uploaded_file = st.sidebar.file_uploader("Choose a handwritten image...", type=["jpg", "png", "jpeg"])
@@ -24,9 +22,8 @@ if uploaded_file is not None:
     image = np.array(image)
     image = image / 255.0  # Normalize the pixel values
 
-    # Make a prediction using the ONNX model
-    input_data = np.expand_dims(image, axis=0)
-    prediction = tf_rep.run(input_data)
+    # Make a prediction using the loaded model
+    prediction = model.predict(np.expand_dims(image, axis=0))
 
     # Post-process the prediction (e.g., extracting text)
 
