@@ -20,7 +20,6 @@ if uploaded_file is not None:
 
     # Preprocess the image for prediction
     # You may need to adjust the preprocessing steps based on your model
-    image = image.resize((224, 224))  # Resize the image to match your model's input size
     image = np.array(image)
     image = image / 255.0  # Normalize the pixel values
 
