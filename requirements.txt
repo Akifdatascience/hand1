@@ -1,0 +1,9 @@
+six
+pandas
+toolz
+streamlit
+tensorflow
+keras
+matplotlib
+seaborn
+joblib
