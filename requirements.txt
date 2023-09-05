@@ -8,3 +8,4 @@ matplotlib
 seaborn
 joblib
 onnx
+onnx_tf
