@@ -4,8 +4,12 @@ import numpy as np
 from PIL import Image
 import io
 
+# Absolute file path to your model.h5
+model_path = 'model.h5'
+
 # Load your H5 model file
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model(model_path)
+
 
 # Create a Streamlit sidebar for file upload
 uploaded_file = st.sidebar.file_uploader("Choose a handwritten image...", type=["jpg", "png", "jpeg"])
