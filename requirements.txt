@@ -7,3 +7,4 @@ keras
 matplotlib
 seaborn
 joblib
+onnx
