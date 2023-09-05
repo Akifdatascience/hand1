@@ -9,3 +9,4 @@ seaborn
 joblib
 onnx
 onnx_tf
+tensorflow_probability
